@@ -1,5 +1,4 @@
 const path = require('path');
-var ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
   entry: [ './src/app.js', './src/main.scss' ],
@@ -9,15 +8,20 @@ module.exports = {
   },
   devtool: 'source-map', // any "source-map"-like devtool is possible
   module: {
-    loaders: [
-      {
-        test: /\.woff2?$|\.ttf$|\.eot$|\.svg$/,
+    rules: [ {
+      test: /\.scss$/,
+      use: [ {
+        loader: "style-loader"
+      }, {
+        loader: "css-loader"
+      }, {
+        loader: 'sass-loader'
+      } ]
+    }, {
+      test: /\.woff2?$|\.ttf$|\.eot$|\.svg$/,
+      use: [ {
         loader: "file-loader"
-      },
-      {
-        test: /\.scss$/,
-        loaders: ["style-loader", "css-loader", "sass-loader"]
-      }
-    ]
+      } ]
+    } ]
   }
 };
