@@ -10,7 +10,7 @@
     "type": "git",
     "url": "git+https://github.com/gvazq82/backbone-webpack.git"
   },
-  "author": "Gabriel Vazquez <gvazquez@mediamorph.com>",
+  "author": "Gabriel Vazquez <gvazq82@gmail.com>",
   "license": "ISC",
   "dependencies": {
     "backbone": "^1.3.3",
